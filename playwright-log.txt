@@ -511,3 +511,114 @@ Error: Browser has been closed.
 {"level":30,"time":"2024-03-23T19:24:48.585Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"currentBrowser: [object Object]"}
 {"level":30,"time":"2024-03-23T19:24:49.309Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Video path: undefined"}
 {"level":30,"time":"2024-03-23T19:24:49.309Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Changed active page"}
+{"level":30,"time":"2024-03-23T19:25:18.612Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method newPage"}
+{"level":30,"time":"2024-03-23T19:25:18.623Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:25:18.623Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"movie_player\"]/div[30]/div[2]/div[2]/button[4] in page."}
+{"level":30,"time":"2024-03-23T19:25:20.696Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:25:20.701Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:25:20.701Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with \"Quality\" in page."}
+{"level":30,"time":"2024-03-23T19:25:21.130Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:25:21.136Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:25:21.136Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with \"144p\" in page."}
+{"level":30,"time":"2024-03-23T19:25:22.693Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:25:29.701Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method getElementStates"}
+{"level":30,"time":"2024-03-23T19:25:29.701Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"skip-button:5\"]/span/button in page."}
+{"level":30,"time":"2024-03-23T19:25:29.951Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method getElementStates"}
+{"level":30,"time":"2024-03-23T19:25:29.963Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:25:29.963Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Invoking keyboard action press with params [\"Space\"]"}
+{"level":30,"time":"2024-03-23T19:25:30.282Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:25:30.287Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:25:30.287Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Invoking keyboard action press with params [\"f\"]"}
+{"level":30,"time":"2024-03-23T19:25:30.389Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:25:30.452Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method switchBrowser"}
+{"level":30,"time":"2024-03-23T19:25:30.453Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method switchBrowser"}
+{"level":30,"time":"2024-03-23T19:25:30.464Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method newContext"}
+{"level":30,"time":"2024-03-23T19:25:30.465Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-03-23T19:25:30.465Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Trace file: "}
+{"level":30,"time":"2024-03-23T19:25:30.473Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Changed active context"}
+{"level":30,"time":"2024-03-23T19:25:30.473Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method newContext"}
+{"level":30,"time":"2024-03-23T19:25:30.477Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method newPage"}
+{"level":30,"time":"2024-03-23T19:25:30.477Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-03-23T19:25:31.251Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Video path: undefined"}
+{"level":30,"time":"2024-03-23T19:25:31.251Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Changed active page"}
+{"level":30,"time":"2024-03-23T19:25:42.942Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method newPage"}
+{"level":30,"time":"2024-03-23T19:25:42.946Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:25:42.947Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"movie_player\"]/div[30]/div[2]/div[2]/button[4] in page."}
+{"level":30,"time":"2024-03-23T19:25:43.600Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:25:43.614Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:25:43.614Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with \"Quality\" in page."}
+{"level":30,"time":"2024-03-23T19:25:44.042Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:25:44.053Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:25:44.053Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with \"144p\" in page."}
+{"level":30,"time":"2024-03-23T19:25:44.506Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:25:51.520Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method getElementStates"}
+{"level":30,"time":"2024-03-23T19:25:51.521Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"skip-button:5\"]/span/button in page."}
+{"level":30,"time":"2024-03-23T19:25:51.772Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method getElementStates"}
+{"level":30,"time":"2024-03-23T19:25:51.790Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:25:51.790Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Invoking keyboard action press with params [\"Space\"]"}
+{"level":30,"time":"2024-03-23T19:25:52.462Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:25:52.469Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:25:52.469Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Invoking keyboard action press with params [\"f\"]"}
+{"level":30,"time":"2024-03-23T19:25:53.251Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:25:53.261Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method switchBrowser"}
+{"level":30,"time":"2024-03-23T19:25:53.261Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method switchBrowser"}
+{"level":30,"time":"2024-03-23T19:25:53.266Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method newContext"}
+{"level":30,"time":"2024-03-23T19:25:53.266Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-03-23T19:25:53.266Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Trace file: "}
+{"level":30,"time":"2024-03-23T19:25:53.276Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Changed active context"}
+{"level":30,"time":"2024-03-23T19:25:53.277Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method newContext"}
+{"level":30,"time":"2024-03-23T19:25:53.285Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method newPage"}
+{"level":30,"time":"2024-03-23T19:25:53.285Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-03-23T19:25:54.561Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Video path: undefined"}
+{"level":30,"time":"2024-03-23T19:25:54.562Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Changed active page"}
+{"level":30,"time":"2024-03-23T19:26:20.208Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method newPage"}
+{"level":30,"time":"2024-03-23T19:26:20.228Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:26:20.228Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"movie_player\"]/div[30]/div[2]/div[2]/button[4] in page."}
+{"level":30,"time":"2024-03-23T19:26:21.980Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:26:21.989Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:26:21.989Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with \"Quality\" in page."}
+{"level":30,"time":"2024-03-23T19:26:23.594Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:26:23.597Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:26:23.598Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with \"144p\" in page."}
+{"level":30,"time":"2024-03-23T19:26:24.427Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:26:31.434Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method getElementStates"}
+{"level":30,"time":"2024-03-23T19:26:31.434Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"skip-button:5\"]/span/button in page."}
+{"level":30,"time":"2024-03-23T19:26:31.686Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method getElementStates"}
+{"level":30,"time":"2024-03-23T19:26:31.692Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:26:31.693Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Invoking keyboard action press with params [\"Space\"]"}
+{"level":30,"time":"2024-03-23T19:26:31.734Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:26:31.747Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:26:31.747Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Invoking keyboard action press with params [\"f\"]"}
+{"level":30,"time":"2024-03-23T19:26:31.778Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:26:31.803Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method switchBrowser"}
+{"level":30,"time":"2024-03-23T19:26:31.815Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method switchBrowser"}
+{"level":30,"time":"2024-03-23T19:26:31.826Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method newContext"}
+{"level":30,"time":"2024-03-23T19:26:31.826Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-03-23T19:26:31.826Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Trace file: "}
+{"level":30,"time":"2024-03-23T19:26:31.834Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Changed active context"}
+{"level":30,"time":"2024-03-23T19:26:31.834Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method newContext"}
+{"level":30,"time":"2024-03-23T19:26:31.842Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method newPage"}
+{"level":30,"time":"2024-03-23T19:26:31.842Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-03-23T19:26:32.098Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Video path: undefined"}
+{"level":30,"time":"2024-03-23T19:26:32.098Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Changed active page"}
+{"level":30,"time":"2024-03-23T19:26:47.814Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method newPage"}
+{"level":30,"time":"2024-03-23T19:26:47.821Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:26:47.821Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"movie_player\"]/div[30]/div[2]/div[2]/button[4] in page."}
+{"level":30,"time":"2024-03-23T19:26:48.980Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:26:48.987Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:26:48.987Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with \"Quality\" in page."}
+{"level":30,"time":"2024-03-23T19:26:49.632Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:26:49.638Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2024-03-23T19:26:49.638Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with \"144p\" in page."}
+{"level":30,"time":"2024-03-23T19:26:50.357Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2024-03-23T19:26:57.369Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method getElementStates"}
+{"level":30,"time":"2024-03-23T19:26:57.369Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"skip-button:5\"]/span/button in page."}
+{"level":30,"time":"2024-03-23T19:26:57.620Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method getElementStates"}
+{"level":30,"time":"2024-03-23T19:26:57.627Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:26:57.628Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Invoking keyboard action press with params [\"Space\"]"}
+{"level":30,"time":"2024-03-23T19:26:57.645Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:26:57.665Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:26:57.666Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Invoking keyboard action press with params [\"f\"]"}
+{"level":30,"time":"2024-03-23T19:26:57.719Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2024-03-23T19:26:57.756Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-03-23T19:26:57.950Z","pid":44642,"hostname":"Inderdeeps-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}

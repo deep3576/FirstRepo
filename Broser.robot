@@ -25,6 +25,7 @@ TC1
         Log to Console  ${i}
     END
     @{List}=    Get Browser ids
+    Log to Console  @{List}
     sleep   604s
     close browser   ALL
 
