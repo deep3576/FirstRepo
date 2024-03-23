@@ -1,0 +1,1838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on darwin)" generated="2024-03-23T15:18:50.475411" rpa="false" schemaversion="5">
+<suite id="s1" name="Broser" source="/Users/inderdeep/IdeaProjects/FirstRepo/broser.robot">
+<test id="s1-t1" name="TC1" line="7">
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>120s</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2024-03-23T15:18:53.228240" elapsed="0.012676"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:18:53.243486" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:18:53.244170" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/inderdeep/IdeaProjects/FirstRepo/browser/traces/e953951c-5d9c-4bba-98e6-65db540be07f"}</msg>
+<msg time="2024-03-23T15:18:54.178942" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/inderdeep/IdeaProjects/FirstRepo/browser/traces/e953951c-5d9c-4bba-98e6-65db540be07f"}</msg>
+<msg time="2024-03-23T15:18:54.179200" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:18:54.212601" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:18:54.212674" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:18:59.120825" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:18:53.242499" elapsed="5.878735"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:18:59.121564" elapsed="0.274299"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:18:59.396631" elapsed="0.157659"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:18:59.554607" elapsed="0.498851"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:19:07.054733" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:19:00.053933" elapsed="7.001032"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:19:07.317373" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:19:07.317645" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:07.055510" elapsed="0.262224"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:19:07.318070" elapsed="0.000455"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:19:07.319653" elapsed="0.000075"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:19:07.319938" elapsed="0.000057"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:19:07.319005" elapsed="0.001078"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:19:07.320365" elapsed="0.050631"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:19:07.371254" elapsed="0.022968"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:19:07.320171" elapsed="0.074292"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:19:07.318810" elapsed="0.075740"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:19:07.394723" elapsed="0.000516"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-03-23T15:18:53.242256" elapsed="14.153145"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:19:07.398187" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:19:07.398896" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:07.403172" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:07.403315" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:07.403508" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:19:07.419023" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:19:07.419144" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:19:11.474966" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:19:07.396353" elapsed="4.078920"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:11.475683" elapsed="0.276622"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:11.753245" elapsed="0.125645"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:11.879158" elapsed="4.115703"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:19:22.995809" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:19:15.995104" elapsed="7.000884"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:19:23.256612" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:19:23.256802" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:22.996323" elapsed="0.260581"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:19:23.257371" elapsed="0.001535"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:19:23.260154" elapsed="0.000088"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:19:23.260516" elapsed="0.000292"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:19:23.259396" elapsed="0.001604"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:19:23.261901" elapsed="0.041229"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:19:23.303404" elapsed="0.040724"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:19:23.261295" elapsed="0.083020"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:19:23.259316" elapsed="0.085136"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:19:23.344830" elapsed="0.000501"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-03-23T15:19:07.396038" elapsed="15.949439"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:19:23.347813" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:19:23.348347" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:23.361280" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:23.361487" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:23.361944" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:19:23.385305" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:19:23.385499" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:19:29.234762" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:19:23.346555" elapsed="5.888417"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:29.235433" elapsed="0.282200"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:29.518304" elapsed="0.636686"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:30.155228" elapsed="0.554752"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:19:37.712509" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:19:30.710527" elapsed="7.002126"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:19:37.974954" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:19:37.975588" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:37.712924" elapsed="0.262925"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:19:37.976842" elapsed="0.000449"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:19:37.978313" elapsed="0.000092"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:19:37.978591" elapsed="0.000059"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:19:37.977622" elapsed="0.001113"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:19:37.978937" elapsed="0.047384"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:19:38.027010" elapsed="0.052537"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:19:37.978799" elapsed="0.101226"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:19:37.977561" elapsed="0.102717"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:19:38.080540" elapsed="0.000579"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-03-23T15:19:23.346263" elapsed="14.735090"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:19:38.086032" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:19:38.086605" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:38.092849" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:38.093069" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:38.093550" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:19:38.113217" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:19:38.113866" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:19:43.992177" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:19:38.083767" elapsed="5.909278"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:43.993923" elapsed="0.301752"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:44.295942" elapsed="0.485933"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:44.782396" elapsed="4.054626"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:19:55.838164" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:19:48.837542" elapsed="7.000751"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:19:56.096712" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:19:56.097068" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:19:55.838508" elapsed="0.258648"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:19:56.097938" elapsed="0.000823"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:19:56.101218" elapsed="0.000143"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:19:56.101736" elapsed="0.000099"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:19:56.099877" elapsed="0.002085"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:19:56.102414" elapsed="0.076091"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:19:56.178871" elapsed="0.041624"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:19:56.102075" elapsed="0.118884"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:19:56.099615" elapsed="0.121661"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:19:56.222163" elapsed="0.001163"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-03-23T15:19:38.082596" elapsed="18.141002"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:19:56.227737" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:19:56.228081" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:56.237394" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:56.237768" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:19:56.238353" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:19:56.260828" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:19:56.260948" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:20:02.980926" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:19:56.224842" elapsed="6.756531"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:02.981791" elapsed="0.506847"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:03.490087" elapsed="0.933954"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:04.424497" elapsed="0.774348"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:20:12.202240" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:20:05.200607" elapsed="7.001870"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:20:12.459904" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:20:12.460126" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:12.202905" elapsed="0.257264"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:20:12.460401" elapsed="0.000327"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:20:12.461220" elapsed="0.000052"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:20:12.461430" elapsed="0.000045"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:20:12.460889" elapsed="0.000654"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:20:12.461738" elapsed="0.423379"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:20:12.885526" elapsed="0.064614"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:20:12.461603" elapsed="0.488994"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:20:12.460860" elapsed="0.489962"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:20:12.951363" elapsed="0.000540"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-03-23T15:19:56.224472" elapsed="16.727589"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:20:12.954452" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:20:12.954925" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:20:12.962354" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:20:12.962561" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:20:12.962828" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:20:12.976826" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:20:12.977163" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:20:22.736622" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:20:12.953055" elapsed="9.783793"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:22.737092" elapsed="0.428392"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:23.165718" elapsed="0.357455"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:23.523593" elapsed="6.108450"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:20:36.633041" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:20:29.632341" elapsed="7.001630"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:20:36.890989" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:20:36.891607" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:36.635161" elapsed="0.256529"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:20:36.892085" elapsed="0.000557"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:20:36.893906" elapsed="0.000114"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:20:36.894210" elapsed="0.000047"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:20:36.892900" elapsed="0.001424"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:20:36.894694" elapsed="0.038031"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:20:36.937126" elapsed="0.027842"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:20:36.894390" elapsed="0.070743"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:20:36.892832" elapsed="0.072368"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:20:36.965418" elapsed="0.000648"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2024-03-23T15:20:12.952682" elapsed="24.013702"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:20:36.972171" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:20:36.973453" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:20:36.982058" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:20:36.982227" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:20:36.982863" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:20:37.002039" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:20:37.002371" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:20:42.093484" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:20:36.969612" elapsed="5.124546"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:42.094759" elapsed="0.239593"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:42.334771" elapsed="0.215086"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:42.550121" elapsed="0.925175"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:20:50.476971" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:20:43.475927" elapsed="7.001408"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:20:50.749106" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:20:50.749558" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:50.477648" elapsed="0.271985"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:20:50.750512" elapsed="0.001374"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:20:50.753588" elapsed="0.000122"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:20:50.755436" elapsed="0.000105"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:20:50.752206" elapsed="0.003574"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:20:50.756115" elapsed="0.121126"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:20:50.877609" elapsed="0.032463"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:20:50.755889" elapsed="0.154454"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:20:50.752146" elapsed="0.158303"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:20:50.910738" elapsed="0.001321"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2024-03-23T15:20:36.968067" elapsed="13.944346"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:20:50.913663" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:20:50.914629" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:20:50.919068" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:20:50.919197" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:20:50.919365" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:20:50.938447" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:20:50.938566" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:20:56.313672" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:20:50.913035" elapsed="5.400971"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:56.314624" elapsed="0.372540"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:56.687419" elapsed="0.203294"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:20:56.891003" elapsed="0.691196"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:21:04.589082" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:20:57.582526" elapsed="7.006740"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:21:04.857124" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:21:04.857472" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:04.589747" elapsed="0.267805"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:21:04.858282" elapsed="0.002046"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:21:04.861252" elapsed="0.000129"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:21:04.861594" elapsed="0.000062"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:21:04.860685" elapsed="0.001213"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:21:04.862215" elapsed="0.161552"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:21:05.024154" elapsed="0.042411"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:21:04.861999" elapsed="0.205214"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:21:04.860631" elapsed="0.207116"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:21:05.068204" elapsed="0.001420"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2024-03-23T15:20:50.912861" elapsed="14.156934"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:21:05.071927" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:21:05.072772" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:21:05.081037" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:21:05.081324" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:21:05.081692" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:21:05.103682" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:21:05.103825" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:21:23.370010" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:21:05.071034" elapsed="18.299207"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:23.370479" elapsed="1.437263"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:24.808238" elapsed="0.525902"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:25.335270" elapsed="1.453129"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:21:33.793201" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:21:26.788759" elapsed="7.005027"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:21:34.063919" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:21:34.064073" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:33.794474" elapsed="0.269635"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:21:34.064328" elapsed="0.000271"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:21:34.065055" elapsed="0.000048"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:21:34.065264" elapsed="0.000044"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:21:34.064760" elapsed="0.000633"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:21:34.066087" elapsed="0.025972"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:21:34.093765" elapsed="0.042748"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:21:34.065471" elapsed="0.071662"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:21:34.064732" elapsed="0.072814"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:21:34.138267" elapsed="0.001265"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2024-03-23T15:21:05.070515" elapsed="29.069238"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:21:34.142220" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:21:34.142610" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:21:34.157190" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:21:34.158084" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:21:34.158565" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:21:34.188194" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:21:34.188284" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:21:39.932991" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:21:34.141060" elapsed="5.792135"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:39.933423" elapsed="0.748568"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:40.682429" elapsed="0.243340"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:40.926071" elapsed="0.521855"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:21:48.450689" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:21:41.448304" elapsed="7.002707"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:21:48.707738" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:21:48.707912" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:48.451546" elapsed="0.256407"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:21:48.708540" elapsed="0.000886"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:21:48.710367" elapsed="0.000112"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:21:48.710691" elapsed="0.000052"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:21:48.709722" elapsed="0.001092"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:21:48.711125" elapsed="0.333856"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:21:49.045249" elapsed="0.038078"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:21:48.710884" elapsed="0.372608"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:21:48.709661" elapsed="0.373905"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:21:49.083753" elapsed="0.000297"/>
+</kw>
+<var name="${i}">9</var>
+<status status="PASS" start="2024-03-23T15:21:34.140531" elapsed="14.943598"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:21:49.085386" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:21:49.085728" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:21:49.090185" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:21:49.090326" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:21:49.090517" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:21:49.107995" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:21:49.108237" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:21:57.437800" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:21:49.084605" elapsed="8.353494"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:57.439393" elapsed="0.468907"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:57.908627" elapsed="0.250495"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:21:58.159385" elapsed="6.145439"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:22:11.308040" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:22:04.305216" elapsed="7.003127"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:22:11.564637" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:22:11.565146" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:22:11.309013" elapsed="0.256173"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:22:11.565433" elapsed="0.000659"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:22:11.567198" elapsed="0.000066"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:22:11.567418" elapsed="0.000041"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:22:11.566626" elapsed="0.000894"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:22:11.567730" elapsed="0.034131"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:22:11.602540" elapsed="0.083007"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:22:11.567600" elapsed="0.118084"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:22:11.566464" elapsed="0.119352"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:22:11.686167" elapsed="0.000586"/>
+</kw>
+<var name="${i}">10</var>
+<status status="PASS" start="2024-03-23T15:21:49.084441" elapsed="22.602675"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:22:11.689491" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:22:11.690226" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:22:11.694905" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:22:11.695061" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:22:11.695458" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:22:11.706164" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:22:11.706287" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:22:25.341984" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:22:11.688397" elapsed="13.654340"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:22:25.343331" elapsed="1.582352"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:22:26.926274" elapsed="1.075706"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:22:28.002292" elapsed="0.986441"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:22:35.991199" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:22:28.988975" elapsed="7.002416"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:22:36.247644" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:22:36.247957" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:22:35.991750" elapsed="0.256286"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:22:36.248396" elapsed="0.000330"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:22:36.249363" elapsed="0.000088"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:22:36.249666" elapsed="0.000055"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:22:36.248870" elapsed="0.000950"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:22:36.251318" elapsed="0.024130"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:22:36.275848" elapsed="0.059954"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:22:36.250843" elapsed="0.085200"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:22:36.248840" elapsed="0.087411"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:22:36.336786" elapsed="0.001664"/>
+</kw>
+<var name="${i}">11</var>
+<status status="PASS" start="2024-03-23T15:22:11.688161" elapsed="24.650982"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:22:36.341032" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:22:36.341265" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:22:36.346114" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:22:36.346248" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:22:36.346397" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:22:36.370401" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:22:36.370636" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:22:43.287529" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:22:36.340271" elapsed="6.947458"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:22:43.288169" elapsed="0.387299"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:22:43.675750" elapsed="0.226202"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:22:43.902232" elapsed="0.872535"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:22:51.775453" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:22:44.775008" elapsed="7.000966"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:22:52.032585" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:22:52.032852" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:22:51.776603" elapsed="0.256318"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:22:52.033252" elapsed="0.000519"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:22:52.035169" elapsed="0.000114"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:22:52.035492" elapsed="0.000051"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:22:52.034130" elapsed="0.001498"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:22:52.035856" elapsed="0.431654"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:22:52.468343" elapsed="0.260477"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:22:52.035708" elapsed="0.693271"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:22:52.034060" elapsed="0.695011"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:22:52.729246" elapsed="0.000467"/>
+</kw>
+<var name="${i}">12</var>
+<status status="PASS" start="2024-03-23T15:22:36.339819" elapsed="16.390063"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:22:52.731501" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:22:52.731741" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:22:52.735311" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:22:52.735452" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:22:52.735603" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:22:52.746035" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:22:52.746116" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:23:07.408652" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:22:52.730700" elapsed="14.678529"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:23:07.410301" elapsed="3.133693"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:23:10.544251" elapsed="0.868241"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:23:11.412784" elapsed="0.654727"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:23:19.070914" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:23:12.069044" elapsed="7.002825"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:23:19.328169" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:23:19.328381" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:23:19.073235" elapsed="0.255419"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:23:19.329001" elapsed="0.000410"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:23:19.329965" elapsed="0.000062"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:23:19.330438" elapsed="0.000278"/>
+</kw>
+<status status="NOT RUN" start="2024-03-23T15:23:19.329581" elapsed="0.001278"/>
+</branch>
+<branch type="ELSE">
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>Space</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:23:19.331338" elapsed="0.068136"/>
+</kw>
+<kw name="Keyboard Key" owner="Browser">
+<arg>Press</arg>
+<arg>f</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" start="2024-03-23T15:23:19.399750" elapsed="0.062823"/>
+</kw>
+<status status="PASS" start="2024-03-23T15:23:19.331038" elapsed="0.131673"/>
+</branch>
+<status status="PASS" start="2024-03-23T15:23:19.329545" elapsed="0.133236"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:23:19.463339" elapsed="0.000995"/>
+</kw>
+<var name="${i}">13</var>
+<status status="PASS" start="2024-03-23T15:22:52.730492" elapsed="26.735264"/>
+</iter>
+<iter>
+<kw name="Open Browser" owner="Browser">
+<msg time="2024-03-23T15:23:19.467315" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg time="2024-03-23T15:23:19.467889" level="INFO">Switching browser to browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:23:19.475348" level="INFO">Successfully changed active browser: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:23:19.475485" level="INFO">Reusing existing browser with id: browser=d086ae77-5c91-48d0-a78a-82c54181fcdf</msg>
+<msg time="2024-03-23T15:23:19.475899" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": true,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-03-23T15:23:19.504135" level="INFO">Successfully created context. </msg>
+<msg time="2024-03-23T15:23:19.507214" level="INFO">{'acceptDownloads': True, 'bypassCSP': True, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2024-03-23T15:23:35.774934" level="INFO">Successfully initialized new page object and opened url: https://youtu.be/FMwlxdMOgQE</msg>
+<arg>https://youtu.be/FMwlxdMOgQE</arg>
+<arg>chromium</arg>
+<arg>headless=true</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" start="2024-03-23T15:23:19.466594" elapsed="16.308580"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//*[@id="movie_player"]/div[30]/div[2]/div[2]/button[4]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:23:35.775429" elapsed="1.250091"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"Quality"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:23:37.025952" elapsed="1.186115"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>"144p"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:23:38.212345" elapsed="2.108502"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-23T15:23:47.323094" level="INFO">Slept 7 seconds.</msg>
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-23T15:23:40.321143" elapsed="7.002414"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-03-23T15:23:47.578664" level="INFO">States are: ['detached']</msg>
+<msg time="2024-03-23T15:23:47.578910" level="INFO">${StateofSkip} = ['detached']</msg>
+<var>${StateofSkip}</var>
+<arg>//*[@id="skip-button:5"]/span/button</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-23T15:23:47.324328" elapsed="0.254643"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${StateofSkip}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-03-23T15:23:47.579311" elapsed="0.000653"/>
+</kw>
+<if>
+<branch type="IF" condition="'${StateofSkip}[0]'=='visible'">
+<kw name="Get Element By Role" owner="Browser">
+<var>${button}</var>
+<arg>button</arg>
+<arg>name=Skip</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for the matched element by ``role`` or a list of references if ``all_elements`` is set to ``True``.</doc>
+<status status="NOT RUN" start="2024-03-23T15:23:47.580784" elapsed="0.000106"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
